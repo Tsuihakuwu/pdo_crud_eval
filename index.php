@@ -1,23 +1,22 @@
 <?php
 
-$db="record";
-$dbhost="localhost";
-$dbport=3306;
-$dbuser="admin";
-$dbpasswd="mdpbdd1";
-$charset="utf8";
-
-try 
-{
-    $pdo = new PDO('mysql:host='.$dbhost.';port='.$dbport.';dbname='.$db.';charset=utf8'.'', $dbuser, $dbpasswd);
-} 
-catch (Exception $e) 
-{
-    echo 'Erreur : ' . $e->getMessage() . '<br />';
-    echo 'N° : ' . $e->getCode();
-    die('Fin du script');
-}
- 
 include('header.php');
+
+include('db.php');
+
+$db = connectbase();
+
+$query = $db->query('SELECT * FROM artist');
+$tab = $query->fetchAll(PDO::FETCH_OBJ);
+$query->closeCursor();
+
+if(!isset($_GET['p']) || isset($_GET['p']) && $_GET['p']==0){
+    include('tab_affichage.php');
+}
+elseif(isset($_GET['p']) && $_GET['p']=='add'){
+    include('artist_new.php');
+}
+
+include('footer.php');
 
 ?>
