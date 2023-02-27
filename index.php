@@ -4,7 +4,7 @@ include('header.php');
 
 include('db.php');
 
-$db = connectbase();
+$db = connexionBase();
 
 $query = $db->query('SELECT * FROM artist');
 $tab = $query->fetchAll(PDO::FETCH_OBJ);

@@ -18,7 +18,7 @@
 
     // S'il n'y a pas eu de redirection vers le formulaire (= si la vérification des données est ok) :
     require "db.php"; 
-    $db = connectbase();
+    $db = connexionBase();
 
 
 try {

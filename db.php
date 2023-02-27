@@ -1,7 +1,7 @@
 <!-- Accès BDD -->
 <?php
 
-function connectbase(){
+function connexionBase(){
     
     $db="record";
     $dbhost="localhost";

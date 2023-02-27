@@ -1,10 +1,5 @@
 <h1>Saisie d'un nouvel artiste</h1>
 
-<a href="index.php"><button>Retour à la liste des artistes</button></a>
-
-<br>
-<br>
-
 <form action ="script_artist_ajout.php" method="post">
 
     <label for="nom_for_label">Nom de l'artiste :</label><br>
@@ -15,5 +10,12 @@
     <input type="text" name="url" id="url_for_label">
     <br><br>
 
-    <input type="submit" value="Ajouter">
+    <div id="control" class="d-flex justify-content-left">
+        <input type="submit" value="Ajouter" class="rounded">
+    </div>
+
 </form>
+<br>
+<div class="d-flex justify-content-end">
+    <a href="index.php"><button class="rounded">Retour à la liste des artistes</button></a>
+</div>

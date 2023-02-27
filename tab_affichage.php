@@ -2,6 +2,8 @@
 <tr>
     <th>ID</th>
     <th>Nom</th>
+    <th>URL</th>
+    <th></th>
 </tr>
 
 <?php foreach ($tab as $artist): ?>
@@ -9,6 +11,8 @@
 <tr>
     <td><?= $artist->artist_id ?></td>
     <td><?= $artist->artist_name ?></td>
+    <td><?= $artist->artist_url ?></td>
+    <td><a href="artist_detail.php?id=<?= $artist->artist_id ?>">Détails</a></td>
 </tr>
 
 <?php endforeach; ?>
@@ -16,5 +20,5 @@
 </table>
 
 <div id="control" class="d-flex justify-content-center">
-    <a href="index.php?p=add"><button>Ajout</button></a>
+    <a href="index.php?p=add"><button class="rounded">Ajout</button></a>
 </div>
