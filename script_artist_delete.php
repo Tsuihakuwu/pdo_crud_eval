@@ -1,6 +1,6 @@
 <?php
     // Contrôle de l'ID (si inexistant ou <= 0, retour à la liste) :
-    if (!(isset($_GET['id'])) || intval($_GET['id']) <= 0) GOTO TrtRedirection;
+    if (!(isset($_POST['id'])) || intval($_POST['id']) <= 0) GOTO TrtRedirection;
 
     // Si la vérification est ok :
     require "db.php"; 
@@ -9,7 +9,7 @@
     try {
         // Construction de la requête DELETE sans injection SQL :
         $requete = $db->prepare("DELETE FROM artist WHERE artist_id = ?");
-        $requete->execute(array($_GET["id"]));
+        $requete->execute(array($_POST["id"]));
         $requete->execute();
         $requete->closeCursor();
     }

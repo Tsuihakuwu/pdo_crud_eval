@@ -1,16 +1,27 @@
 <?php
 
+$authentificated = false;
+
 session_start();
 
-$_SESSION["login"] = $_POST['id'];
-$_SESSION["password"] = $_POST['pwd'];
+require "db.php";
+$db = connexionBase();
 
-echo $_SESSION["login"];
-echo $_SESSION["password"];
+$requete = $db->prepare("SELECT * FROM user WHERE usr_log=? AND usr_pwd=?");
+$requete->execute(array($_POST['log'],$_POST['pwd']));
+$user = $requete->fetch(PDO::FETCH_OBJ);
+$requete->closeCursor();
 
+if($user==false)
+{
+    header("Location:index.php");
+    $authentificated = false;
+}
+else
+{
+    header("Location:index.php");
+    $authentificated = true;
+    $_SESSION['login'] = $_POST['log'];
+    $_SESSION['password'] = $_POST['pwd'];
+}
 ?>
-
-
-<!-- INSERT INTO `user` (`id_user`, `login`, `password`, `auth_level`) VALUES
-(0,'adm','adm',3),
-(1,'usr','usr',0); -->

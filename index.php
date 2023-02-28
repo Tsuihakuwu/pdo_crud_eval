@@ -2,7 +2,7 @@
 
     session_start();
 
-    if ( ! isset($_SESSION["login"]) ) 
+    if (!isset($_SESSION["login"])) 
     {
         include("header.php");
         include("connexion.php");
@@ -26,10 +26,17 @@
         elseif(isset($_GET['p']) && $_GET['p']=='add'){
             include('artist_new.php');
         }
+        elseif(isset($_GET['p']) && $_GET['p']=='a_detail'){
+            include('artist_detail.php');
+        }
+        elseif(isset($_GET['p']) && $_GET['p']=='a_form'){
+            include('artist_form.php');
+        }
+        elseif(isset($_GET['p']) && $_GET['p']=='a_cdel'){
+            include('artist_cdel.php');
+        }
         
         include('footer.php');
 
-        echo $_SESSION["password"];
-        
     }
 ?>

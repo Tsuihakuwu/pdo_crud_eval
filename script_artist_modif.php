@@ -9,7 +9,7 @@
         header("Location: artists.php");
     }
     elseif ($nom == Null || $url == Null) {
-        header("Location: artist_form.php?id=".$id);
+        header("Location: index.php?p=a_form&id=".$id);
         exit;
     }
 
@@ -34,6 +34,6 @@
     }
 
     // Si OK: redirection vers la page artist_detail.php
-    header("Location: artist_detail.php?id=" . $id);
+    header("Location: index.php?p=a_form&id=" . $id);
     exit;
     ?>

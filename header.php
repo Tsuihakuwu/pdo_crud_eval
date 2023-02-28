@@ -13,5 +13,16 @@
 
 <?php if(isset($_SESSION["login"]))
 {
-    echo '<p class="d-flex justify-content-left text-white">Connecté en tant que : '.$_SESSION["login"].'</p>';
+    echo '
+    <div class="d-flex">
+        <div class="d-flex  justify-content-start col-1">
+            <a href="index.php"><img src="asset/img/home-icon.png" class="col-3" alt="HOME"></a>
+        </div>
+        <div class="d-flex justify-content-end col-11">
+            <span class="text-white mt-1 mx-3">Connecté en tant que : '.$_SESSION["login"].'</span>    
+            <a href="script_deco.php"><button class="rounded">Deconnexion</button></a>
+        </div>
+    </div>';
 }
+
+?>

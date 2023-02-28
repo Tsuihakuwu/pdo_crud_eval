@@ -12,7 +12,7 @@
     <td><?= $artist->artist_id ?></td>
     <td><?= $artist->artist_name ?></td>
     <td><?= $artist->artist_url ?></td>
-    <td><a href="artist_detail.php?id=<?= $artist->artist_id ?>">Détails</a></td>
+    <td><a href="index.php?p=a_detail&id=<?= $artist->artist_id ?>">Détails</a></td>
 </tr>
 
 <?php endforeach; ?>
