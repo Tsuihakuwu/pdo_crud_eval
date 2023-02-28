@@ -10,3 +10,8 @@
 </head>
 <body>
     <div class='mt-3 mb-3 mx-auto pt-3 pb-3 px-3 w-75 container-flex rounded bg-dark text-white' id="wraper">
+
+<?php if(isset($_SESSION["login"]))
+{
+    echo '<p class="d-flex justify-content-left text-white">Connecté en tant que : '.$_SESSION["login"].'</p>';
+}
