@@ -1,10 +1,8 @@
 <?php
 
-$authentificated = false;
+if(session_status() !== PHP_SESSION_ACTIVE) session_start();
 
-session_start();
-
-require "db.php";
+require "../../db.php";
 $db = connexionBase();
 
 $requete = $db->prepare("SELECT * FROM user WHERE usr_log=? AND usr_pwd=?");
@@ -14,13 +12,12 @@ $requete->closeCursor();
 
 if($user==false)
 {
-    header("Location:index.php");
-    $authentificated = false;
+    header("Location:/index.php");
+    $_SESSION['error_login']=true;
 }
 else
 {
-    header("Location:index.php");
-    $authentificated = true;
+    header("Location:/index.php");
     $_SESSION['login'] = $_POST['log'];
     $_SESSION['password'] = $_POST['pwd'];
 }

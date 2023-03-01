@@ -6,15 +6,15 @@
 
     // En cas d'erreur, on renvoie vers le formulaire
     if ($id == Null) {
-        header("Location: artists.php");
+        header("Location:/index.php");
     }
     elseif ($nom == Null || $url == Null) {
-        header("Location: index.php?p=a_form&id=".$id);
+        header("Location:/index.php?p=a_form&id=".$id);
         exit;
     }
 
     // Si la vérification des données est ok :
-    require "db.php"; 
+    require "../../db.php";
     $db = connexionBase();
 
     try {
@@ -34,6 +34,6 @@
     }
 
     // Si OK: redirection vers la page artist_detail.php
-    header("Location: index.php?p=a_form&id=" . $id);
+    header("Location:/index.php?p=a_detail&id=".$id);
     exit;
     ?>

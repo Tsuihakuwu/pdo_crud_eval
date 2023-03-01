@@ -20,6 +20,7 @@
     ?>
 
         <h1> Détail artiste</h1>
+        
         <?php
         if ($myArtist == false){
             echo 'Erreur : L\'artiste n\'existe pas<div>';
@@ -29,16 +30,16 @@
             '<br>Nom de l\'artiste : '.$myArtist->artist_name.
             '<br>Site Internet : '.$myArtist->artist_url.'<br class="mb-3">
             <div id="modif" class="d-flex justify-content-left">
-                <a href="index.php?p=a_form&id='.$myArtist->artist_id.'">
-                    <button class="rounded">Modifier</button>
+                <a href="?p=a_form&id='.$myArtist->artist_id.'">
+                    <input type="button" class="rounded" value="Modifier"></input>
                 </a>
-                <a href="index.php?p=a_cdel&id='.$myArtist->artist_id.'" class="mx-1">
-                    <button class="rounded">Supprimer</button>
+                <a href="?p=a_cdel&id='.$myArtist->artist_id.'" class="mx-1">
+                    <input type="button" class="rounded" value="Supprimer"></input>
                 </a>
             <br></div>';
         }
         ?>
 
 <div class="d-flex justify-content-end">
-    <a href="index.php"><button class="rounded">Retour à la liste des artistes</button></a>
+    <a href="?p=artist"><input type="button" class="rounded" value="Retour à la liste des artistes"></input></a>
 </div>

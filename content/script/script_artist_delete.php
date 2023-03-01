@@ -3,7 +3,7 @@
     if (!(isset($_POST['id'])) || intval($_POST['id']) <= 0) GOTO TrtRedirection;
 
     // Si la vérification est ok :
-    require "db.php"; 
+    require "../../db.php";
     $db = connexionBase();
 
     try {
@@ -20,6 +20,6 @@
 
     // Si OK: redirection vers la page artists.php
     TrtRedirection:
-    header("Location: index.php");
+    header("Location:/index.php?p=artist");
     exit;
 ?>

@@ -12,7 +12,7 @@
     <td><?= $artist->artist_id ?></td>
     <td><?= $artist->artist_name ?></td>
     <td><?= $artist->artist_url ?></td>
-    <td><a href="index.php?p=a_detail&id=<?= $artist->artist_id ?>">Détails</a></td>
+    <td><a href="?p=a_detail&id=<?= $artist->artist_id ?>">Détails</a></td>
 </tr>
 
 <?php endforeach; ?>
@@ -20,5 +20,5 @@
 </table>
 
 <div id="control" class="d-flex justify-content-center">
-    <a href="index.php?p=add"><button class="rounded">Ajout</button></a>
+    <a href="?p=add"><input type="button" class="rounded" value="Ajout"></input></a>
 </div>

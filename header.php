@@ -14,15 +14,26 @@
 <?php if(isset($_SESSION["login"]))
 {
     echo '
+    <div class="d-flex justify-content-between">
     <div class="d-flex">
-        <div class="d-flex  justify-content-start col-1">
-            <a href="index.php"><img src="asset/img/home-icon.png" class="col-3" alt="HOME"></a>
-        </div>
-        <div class="d-flex justify-content-end col-11">
+            <a href="index.php"><img src="asset/img/home-icon.png" class="img-fluid" alt="HOME"></a>
+    ';
+
+    //FIL
+
+    $list_page = array('artist','add','a_detail','a_form','a_cdel');
+
+    if(isset($_GET['p']) && in_array($_GET['p'],$list_page))
+    {
+        echo '<a class="mx-1 col-1" href="index.php">Accueil</a><p>&gt;</p> <a class="mx-1" href="/index.php?p=artist">Artiste</a>';
+    }
+
+    echo '</div>
+        
+        <div class="d-flex justify-content-end col-5">
             <span class="text-white mt-1 mx-3">Connecté en tant que : '.$_SESSION["login"].'</span>    
-            <a href="script_deco.php"><button class="rounded">Deconnexion</button></a>
-        </div>
-    </div>';
+            <a href="content/script/script_deco.php"><input type="button" class="rounded" value="Deconnexion"></input></a>
+        </div></div>';
 }
 
 ?>

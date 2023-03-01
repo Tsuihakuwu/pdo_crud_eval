@@ -12,12 +12,12 @@
 
     // En cas d'erreur, on renvoie vers le formulaire
     if ($nom == Null || $url == Null) {
-        header("Location: artist_new.php");
+        header("Location:/index.php?p=add");
         exit;
     }
 
     // S'il n'y a pas eu de redirection vers le formulaire (= si la vérification des données est ok) :
-    require "db.php"; 
+    require "../../db.php";
     $db = connexionBase();
 
 
@@ -45,7 +45,7 @@ catch (Exception $e) {
 }
 
 // Si OK: redirection vers la page artists.php
-header("Location: index.php");
+header("Location:/index.php?p=artist");
 
 // Fermeture du script
 exit;

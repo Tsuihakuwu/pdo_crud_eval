@@ -1,4 +1,3 @@
-<!-- Accès BDD -->
 <?php
 
 function connexionBase(){

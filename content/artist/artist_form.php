@@ -7,7 +7,7 @@
 
 <h1>Artiste n°<?= $myArtist->artist_id; ?> - <?= $myArtist->artist_name; ?></h1>
 
-<form action ="script_artist_modif.php" method="post">
+<form action ="content/script/script_artist_modif.php" method="post">
 
     <input type="hidden" name="id" value="<?= $myArtist->artist_id ?>">
 
@@ -18,9 +18,8 @@
     <label for="url_for_label">Adresse site internet :</label><br>
     <input type="text" name="url" id="url_for_label" value="<?= $myArtist->artist_url ?>">
     <br><br>
-    <input type="submit" value="Modifier">
+    <div class="d-flex justify-content-start">
+        <input type="submit" value="Modifier">
+        <a class="mx-2" href="?p=a_detail&id=<?php echo $myArtist->artist_id ?>"><input type="button" value="Annuler" class="rounded"></a>
+    </div>
 </form>
-
-<div class="d-flex justify-content-start">
-    <a href="index.php?p=a_detail&id=<?php echo $myArtist->artist_id ?>"><button class="rounded">Annuler</button></a>
-</div>
