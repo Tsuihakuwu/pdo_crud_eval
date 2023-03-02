@@ -4,7 +4,7 @@
         <a href="?p=artist">Liste des artistes</a>
     </li>
     <li>
-        <a href="#">Liste des disques</a>
+        <a href="?p=disc">Liste des disques</a>
     </li>
     <li>
         <a href="#">placeholder</a>

@@ -1,3 +1,18 @@
+<?php
+        include('db.php');
+        
+        $db = connexionBase();
+        
+        $query = $db->query('SELECT * FROM artist');
+        $tab = $query->fetchAll(PDO::FETCH_OBJ);
+        $query->closeCursor();
+?>
+
+
+<div id="control" class="d-flex justify-content-center">
+    <a href="?p=add"><input type="button" class="btn btn-light" value="Ajouter un artiste"></input></a>
+</div>
+
 <table class='table table-dark justify-content-center d-flex w-100 mt-3'>
 <tr>
     <th>ID</th>
@@ -18,7 +33,3 @@
 <?php endforeach; ?>
 
 </table>
-
-<div id="control" class="d-flex justify-content-center">
-    <a href="?p=add"><input type="button" class="rounded" value="Ajout"></input></a>
-</div>

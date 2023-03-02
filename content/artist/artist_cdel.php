@@ -1,4 +1,14 @@
 <?php
+        include('db.php');
+        
+        $db = connexionBase();
+        
+        $query = $db->query('SELECT * FROM artist');
+        $tab = $query->fetchAll(PDO::FETCH_OBJ);
+        $query->closeCursor();
+?>
+
+<?php
     $id = $_GET["id"];
 
     $requete = $db->prepare("SELECT * FROM artist WHERE artist_id=?");
@@ -16,7 +26,7 @@
                 '<br>Site Internet : '.$myArtist->artist_url.'<br class="mb-3"></span>';
     ?>
     <div class="d-flex justify-content-start">
-        <input type="submit" value="Supprimer" class="rounded text-danger">
-        <a class="mx-2" href="?p=a_detail&id=<?php echo $myArtist->artist_id ?>"><input type="button" value="Annuler" class="rounded"></a>
+        <input type="submit" value="Supprimer" class="btn btn-light text-danger">
+        <a class="mx-2" href="?p=a_detail&id=<?php echo $myArtist->artist_id ?>"><input type="button" value="Annuler" class="btn btn-light"></a>
     </div>
 </form>

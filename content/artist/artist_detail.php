@@ -1,7 +1,7 @@
 <?php
     // On se connecte à la BDD via notre fichier db.php :
-    // require "db.php";
-    // $db = connexionBase();
+    require "db.php";
+    $db = connexionBase();
 
     // On récupère l'ID passé en paramètre :
     $id = $_GET["id"];
@@ -31,15 +31,11 @@
             '<br>Site Internet : '.$myArtist->artist_url.'<br class="mb-3">
             <div id="modif" class="d-flex justify-content-left">
                 <a href="?p=a_form&id='.$myArtist->artist_id.'">
-                    <input type="button" class="rounded" value="Modifier"></input>
+                    <input type="button" class="btn btn-light" value="Modifier"></input>
                 </a>
                 <a href="?p=a_cdel&id='.$myArtist->artist_id.'" class="mx-1">
-                    <input type="button" class="rounded" value="Supprimer"></input>
+                    <input type="button" class="btn btn-light" value="Supprimer"></input>
                 </a>
             <br></div>';
         }
         ?>
-
-<div class="d-flex justify-content-end">
-    <a href="?p=artist"><input type="button" class="rounded" value="Retour à la liste des artistes"></input></a>
-</div>

@@ -11,32 +11,34 @@
     else 
     {
         include('header.php');
-
-        include('db.php');
-        
-        $db = connexionBase();
-        
-        $query = $db->query('SELECT * FROM artist');
-        $tab = $query->fetchAll(PDO::FETCH_OBJ);
-        $query->closeCursor();
         
         if(!isset($_GET['p']) || isset($_GET['p']) && $_GET['p']==0){
             include('menu.php');
         }
-        elseif(isset($_GET['p']) && $_GET['p']=='artist'){
-            include('content/artist/artist_affichage.php');
-        }
-        elseif(isset($_GET['p']) && $_GET['p']=='add'){
-            include('content/artist/artist_new.php');
-        }
-        elseif(isset($_GET['p']) && $_GET['p']=='a_detail'){
-            include('content/artist/artist_detail.php');
-        }
-        elseif(isset($_GET['p']) && $_GET['p']=='a_form'){
-            include('content/artist/artist_form.php');
-        }
-        elseif(isset($_GET['p']) && $_GET['p']=='a_cdel'){
-            include('content/artist/artist_cdel.php');
+        else {
+            switch($_GET['p']){
+                case 'artist':
+                    include('content/artist/artist_affichage.php');
+                    break;
+                case 'add':
+                    include('content/artist/artist_new.php');
+                    break;
+                case 'a_detail':
+                    include('content/artist/artist_detail.php');
+                    break;
+                case 'a_form':
+                    include('content/artist/artist_form.php');
+                    break;
+                case 'a_cdel':
+                    include('content/artist/artist_cdel.php');
+                    break;
+                case 'disc':
+                    include('content/disc/disc_affichage.php');
+                    break;
+                case 'add_disc':
+                    include('content/disc/disc_new.php');
+                    break;
+            }
         }
         
         include('footer.php');

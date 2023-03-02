@@ -12,10 +12,6 @@
     
     <br class="mb-2">
     
-    <input type="submit" value="Ajouter" class="rounded">
+    <input type="submit" value="Ajouter" class="btn btn-light mt-2">
 
 </form>
-<br>
-<div class="d-flex justify-content-end">
-    <a href="?p=artist"><input type="button" class="rounded" value="Retour à la liste des artistes"></input></a>
-</div>

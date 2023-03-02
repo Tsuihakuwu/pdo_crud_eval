@@ -1,8 +1,11 @@
 <?php
-        $requete = $db->prepare("SELECT * FROM artist WHERE artist_id=?");
-        $requete->execute(array($_GET["id"]));
-        $myArtist = $requete->fetch(PDO::FETCH_OBJ);
-        $requete->closeCursor();
+    require "db.php";
+    $db = connexionBase();
+
+    $requete = $db->prepare("SELECT * FROM artist WHERE artist_id=?");
+    $requete->execute(array($_GET["id"]));
+    $myArtist = $requete->fetch(PDO::FETCH_OBJ);
+    $requete->closeCursor();
 ?>
 
 <h1>Artiste n°<?= $myArtist->artist_id; ?> - <?= $myArtist->artist_name; ?></h1>
@@ -19,7 +22,7 @@
     <input type="text" name="url" id="url_for_label" value="<?= $myArtist->artist_url ?>">
     <br><br>
     <div class="d-flex justify-content-start">
-        <input type="submit" value="Modifier">
-        <a class="mx-2" href="?p=a_detail&id=<?php echo $myArtist->artist_id ?>"><input type="button" value="Annuler" class="rounded"></a>
+        <input type="submit" value="Modifier" class="btn btn-light">
+        <a class="mx-2" href="?p=a_detail&id=<?php echo $myArtist->artist_id ?>"><input type="button" value="Annuler" class="btn btn-light"></a>
     </div>
 </form>
