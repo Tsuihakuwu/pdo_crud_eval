@@ -25,7 +25,7 @@
             <span><b>Label : </b><?= $disc->disc_label ?></span>
             <span><b>Année : </b><?= $disc->disc_year ?></span>
             <span><b>Genre : </b><?= $disc->disc_genre ?></span>
-            <span class='mt-4'><a href="#"><input type ="button" class="btn btn-light" value="Détails"></input></a></span>
+            <span class='mt-4'><a href="?p=d_detail&d_id=<?= $disc->disc_id ?>"><input type ="button" class="btn btn-light" value="Détails"></input></a></span>
         </div>
 <?php endforeach; ?>
 </div>

@@ -65,7 +65,8 @@
 
 try {
     // Construction de la requête INSERT sans injection SQL :
-    $requete = $db->prepare("INSERT INTO disc (disc_title,disc_year,disc_picture,disc_label,disc_genre,disc_price,artist_id) VALUES (:title,:dyear,:picture,:label,:genre,:price,:artist);");
+    $requete = $db->prepare("   INSERT INTO disc (disc_title,disc_year,disc_picture,disc_label,disc_genre,disc_price,artist_id) 
+                                VALUES (:title,:dyear,:picture,:label,:genre,CAST(:price AS DECIMAL(10,5)),:artist);");
 
     var_dump($requete);
 
@@ -75,11 +76,8 @@ try {
     $requete->bindValue(":picture", $_FILES["disc_picture"]["name"], PDO::PARAM_STR);
     $requete->bindValue(":label", $my_new_disc_label, PDO::PARAM_STR);
     $requete->bindValue(":genre", $my_new_disc_genre, PDO::PARAM_STR);
-    $requete->bindValue(":price", $my_new_disc_price, PDO::PARAM_STR);
+    $requete->bindValue(":price", str_replace(",", ".", $my_new_disc_price), PDO::PARAM_STR);
     $requete->bindValue(":artist", $my_new_disc_artist, PDO::PARAM_INT);
-
-
-    // POUR LUNDI : PROBLEME PARAM_STR OU PARAM_INT POUR DECIMAL SUR PRICE DANS LA REQUETE SQL
 
 
     // Lancement de la requête :
@@ -100,8 +98,8 @@ catch (Exception $e) {
     die("Fin du script (script_disc_ajout.php)");
 }
 
-// // Si OK: redirection vers la page artists.php
-// header("Location:/index.php?p=disc");
+// Si OK: redirection vers la page disc
+header("Location:/index.php?p=disc");
 
 // // Fermeture du script
 // exit;

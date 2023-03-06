@@ -38,6 +38,15 @@
                 case 'add_disc':
                     include('content/disc/disc_new.php');
                     break;
+                case 'd_detail':
+                    include('content/disc/disc_detail.php');
+                    break;
+                case 'd_modif':
+                    include('content/disc/disc_modif.php');
+                    break;
+                case 'd_cdel':
+                    include('content/disc/disc_cdel.php');
+                    break;
             }
         }
         

@@ -9,8 +9,8 @@
     <title>PDO</title>
 </head>
 <body>
-<header class='d-flex mx-auto bg-dark text-white mt-3 mb-3 pt-3 pb-3 px-3 justify-content-center rounded'>
-    <img src="asset/img/logo.png" alt="LOGO" class="rounded">
+<header class='d-flex mx-auto text-white mt-3 mb-3 pt-3 pb-3 px-3 justify-content-center rounded'>
+    <img src="asset/img/logo.png" alt="LOGO" class="rounded w-25">
 </header>
 
 <div class='container-flex mx-auto px-3 pt-3 pb-3 w-75 rounded bg-dark text-white' id="wraper">
@@ -28,7 +28,7 @@
     //FIL
 
     $list_page_artist = array('artist','add','a_detail','a_form','a_cdel');
-    $list_page_disc = array('disc','add_disc');
+    $list_page_disc = array('disc','add_disc','d_detail','d_modif','d_cdel');
 
     if(isset($_GET['p']) && in_array($_GET['p'],$list_page_artist))
     {
