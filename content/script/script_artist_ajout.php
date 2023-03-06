@@ -40,7 +40,7 @@ try {
 catch (Exception $e) {
     var_dump($requete->queryString);
     var_dump($requete->errorInfo());
-    echo "Erreur : " . $requete->errorInfo()[2] . "<br>";
+    echo "Erreur : " . $requete->errorInfo()[2] . "<br>"; 
     die("Fin du script (script_artist_ajout.php)");
 }
 
