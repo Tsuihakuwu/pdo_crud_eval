@@ -20,14 +20,14 @@
                 case 'artist':
                     include('content/artist/artist_affichage.php');
                     break;
-                case 'add':
+                case 'add_artist':
                     include('content/artist/artist_new.php');
                     break;
                 case 'a_detail':
                     include('content/artist/artist_detail.php');
                     break;
-                case 'a_form':
-                    include('content/artist/artist_form.php');
+                case 'a_mod':
+                    include('content/artist/artist_modif.php');
                     break;
                 case 'a_cdel':
                     include('content/artist/artist_cdel.php');
@@ -41,7 +41,7 @@
                 case 'd_detail':
                     include('content/disc/disc_detail.php');
                     break;
-                case 'd_modif':
+                case 'd_mod':
                     include('content/disc/disc_modif.php');
                     break;
                 case 'd_cdel':

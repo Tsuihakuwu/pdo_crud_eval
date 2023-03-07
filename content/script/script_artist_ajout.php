@@ -12,7 +12,7 @@
 
     // En cas d'erreur, on renvoie vers le formulaire
     if ($nom == Null || $url == Null) {
-        header("Location:/index.php?p=add");
+        header("Location:/index.php?p=add_artist");
         exit;
     }
 

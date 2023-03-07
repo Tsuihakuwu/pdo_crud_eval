@@ -18,8 +18,6 @@
     $requete->closeCursor();
     
     ?>
-
-        <h1> Détail artiste</h1>
         
         <?php
         if ($myArtist == false){
@@ -31,7 +29,7 @@
             '<br>Nom de l\'artiste : '.$myArtist->artist_name.
             '<br>Site Internet : '.$myArtist->artist_url.'<br class="mb-3">
             <div id="modif" class="d-flex justify-content-left">
-                <a href="?p=a_form&id='.$myArtist->artist_id.'">
+                <a href="?p=a_mod&id='.$myArtist->artist_id.'">
                     <input type="button" class="btn btn-light" value="Modifier"></input>
                 </a>
                 <a href="?p=a_cdel&id='.$myArtist->artist_id.'" class="mx-1">

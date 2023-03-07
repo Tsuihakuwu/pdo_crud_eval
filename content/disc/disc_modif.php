@@ -15,8 +15,6 @@
     $requete2->closeCursor();
     
     ?>
-
-        <h1 class="mx-3 mb-3">Modification disque</h1>
         
         <?php
         if ($myDisc == false){

@@ -1,5 +1,3 @@
-<h1>Saisie d'un nouvel artiste</h1>
-
 <form action ="content/script/script_artist_ajout.php" method="post">
 
     <label for="nom_for_label">Nom de l'artiste :</label><br>

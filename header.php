@@ -28,16 +28,40 @@
 
     //FIL
 
-    $list_page_artist = array('artist','add','a_detail','a_form','a_cdel');
-    $list_page_disc = array('disc','add_disc','d_detail','d_modif','d_cdel');
+    $list_page_artist = array('artist','add_artist','a_detail','a_mod','a_cdel');
+    $list_page_disc = array('disc','add_disc','d_detail','d_mod','d_cdel');
 
     if(isset($_GET['p']) && in_array($_GET['p'],$list_page_artist))
     {
         echo '<span class="mx-1">&gt;</span> <a class="mx-1" href="/index.php?p=artist">Artistes</a>';
+        if($_GET['p']=='a_detail'){
+            echo '<span class="mx-1">&gt;</span><span>Détail artiste</span>';
+        }
+        elseif($_GET['p']=='a_mod'){
+            echo '<span class="mx-1">&gt;</span><span>Détail artiste</span><span class="mx-1">&gt;</span><span>Modification artiste</span>';
+        }
+        elseif($_GET['p']=='a_cdel'){
+            echo '<span class="mx-1">&gt;</span><span>Détail artiste</span><span class="mx-1">&gt;</span><span>Suppression artiste</span>';
+        }
+        elseif($_GET['p']=='add_artist'){
+            echo '<span class="mx-1">&gt;</span><span>Saisie d\'un nouvel artiste</span>';
+        }
     }
     elseif(isset($_GET['p']) && in_array($_GET['p'],$list_page_disc))
     {
         echo '<span class="mx-1">&gt;</span> <a class="mx-1" href="/index.php?p=disc">Disques</a>';
+        if($_GET['p']=='d_detail'){
+            echo '<span class="mx-1">&gt;</span><span>Détail disque</span>';
+        }
+        elseif($_GET['p']=='d_mod'){
+            echo '<span class="mx-1">&gt;</span><span>Détail disque</span><span class="mx-1">&gt;</span><span>Modification disque</span>';
+        }
+        elseif($_GET['p']=='d_cdel'){
+            echo '<span class="mx-1">&gt;</span><span>Détail disque</span><span class="mx-1">&gt;</span><span>Suppression disque</span>';
+        }
+        elseif($_GET['p']=='add_disc'){
+            echo '<span class="mx-1">&gt;</span><span>Saisie d\'un nouvel artiste</span>';
+        }
     }
 
     echo '</div>

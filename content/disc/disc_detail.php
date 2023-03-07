@@ -18,8 +18,6 @@
     $requete->closeCursor();
     
     ?>
-
-        <h1 class="mx-3 mb-3">Détail disque</h1>
         
         <?php
 
@@ -67,7 +65,7 @@
 
             <div class="d-flex col-12 justify-content-between">
                 <div>
-                    <span class='mt-4'><a href="?p=d_modif&d_id=<?= $myDisc->disc_id ?>"><input type ="button" class="btn btn-light" value="Modifier"></input></a></span>
+                    <span class='mt-4'><a href="?p=d_mod&d_id=<?= $myDisc->disc_id ?>"><input type ="button" class="btn btn-light" value="Modifier"></input></a></span>
                     <span class='mt-4'><a href="?p=d_cdel&d_id=<?= $myDisc->disc_id ?>"><input type ="button" class="btn btn-light" value="Supprimer"></input></a></span>
                 </div>
                 <div>

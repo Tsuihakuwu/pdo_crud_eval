@@ -7,5 +7,19 @@ Message en cas de DELETE FOREIGN KEY quand un DELETE sur un artist possedant des
 Ajout .Ico -- OK
 Modification et mise en forme des differents message d'erreur lors d'injection disc et artist dans URL GET -- OK
 
-0.07
+0.07 - CRUD disc
 
+Refonte du fil d'Ariane et changement du nom et des alias de la page artist_from > artist_modif et a_mod --OK
+
+0.08 - Refonte fil + Organisation fichiers
+
+
+
+
+
+
+À faire : 
+
+* Gérer vues selon auth_level usr ou a_mod
+* Formulaire inscription
+* Menu inscris en vue admin avec gestion attribution de droits
