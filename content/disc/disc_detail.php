@@ -22,14 +22,20 @@
         <h1 class="mx-3 mb-3">Détail disque</h1>
         
         <?php
+
         if ($myDisc == false){
-            echo 'Erreur : Le disque n\'existe pas<div>';
+
+            echo '  <span class="text-danger d-flex w-100 mx-3 mb-3 mt-3">Erreur : Le disque n\'existe pas<a href="?p=disc"></span>
+                    <a class="mx-3" href="?p=disc"><input type ="button" class="btn btn-light" value="Retour"></input></a></span>';
         }
         else {
 
         ?>
         
         <form action ="#" method="post" class="d-flex mb-3 m-auto justify-content-between flex-wrap w-50">
+
+            <input type="hidden" name="disc_id" value="<?= $myDisc->disc_id ?>">
+
             <div class="col-5">
                 <label for="disc_title" class="w-25 mb-1">Titre :</label>
                 <input type="text" name="disc_title" id="disc_title" readonly value="<?= $myDisc->disc_title ?>" class="w-100 mb-2">

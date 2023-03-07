@@ -12,6 +12,7 @@
 <div class="d-flex justify-content-center">
 
       <form action ="content/script/script_disc_ajout.php" method="post" class="w-50" enctype="multipart/form-data">
+
         <div>
             <label for="disc_title" class="w-25 mb-1">Titre :</label>
             <input type="text" name="disc_title" id="disc_title" placeholder="Entrez un titre" class="w-100 mb-2">

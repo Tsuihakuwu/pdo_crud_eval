@@ -17,7 +17,7 @@
 <div class="d-flex mb-3 justify-content-start flex-wrap">
 <?php foreach ($tab as $disc): ?>
         <div class="d-flex rounded col-2 border border-white mb-3">
-            <img src="../../asset/img/jaquettes/<?= $disc->disc_picture ?>" alt="pochette_album" class="img-fluid rounded">
+            <img src="../../asset/img/jaquettes/<?= $disc->disc_picture ?>" alt="pochette_album" class="img-fluid w-100 rounded">
         </div>
         <div class="d-flex col-3 flex-column justify-content-center mx-5 mb-3">
             <span><b><?= $disc->disc_title ?></b></span>

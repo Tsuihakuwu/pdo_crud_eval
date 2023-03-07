@@ -5,8 +5,8 @@ function connexionBase(){
     $db="record";
     $dbhost="localhost";
     $dbport=3306;
-    $dbuser="admin";
-    $dbpasswd="mdpbdd1";
+    $dbuser="root";
+    $dbpasswd="";
     $charset="utf8";
     
     try 

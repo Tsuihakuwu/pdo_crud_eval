@@ -20,13 +20,17 @@
         
         <?php
         if ($myDisc == false){
-            echo 'Erreur : Le disque n\'existe pas<div>';
+            echo '  <span class="text-danger d-flex w-100 mx-3 mb-3 mt-3">Erreur : Le disque n\'existe pas<a href="?p=disc"></span>
+            <a class="mx-3" href="?p=disc"><input type ="button" class="btn btn-light" value="Retour"></input></a></span>';
         }
         else {
 
         ?>
         
-        <form action ="" method="post" class="d-flex mb-3 m-auto justify-content-between flex-wrap w-50">
+        <form action ="content/script/script_disc_modif.php" method="post" class="d-flex mb-3 m-auto justify-content-between flex-wrap w-50" enctype="multipart/form-data">
+
+            <input type="hidden" name="disc_id" value="<?= $myDisc->disc_id ?>">
+
             <div class="col-12">
                 <label for="disc_title" class="w-25 mb-1">Titre :</label>
                 <input type="text" name="disc_title" id="disc_title" value="<?= $myDisc->disc_title ?>" class="w-100 mb-2">
@@ -62,17 +66,20 @@
                 <input type="text" name="disc_price" id="disc_price" value="<?= $myDisc->disc_price ?>" class="w-100 mb-2">
             </div>
             <div>
-                <span class="w-100 mb-1">Picture :</span><br>
-                <img src="<?php echo'../../asset/img/jaquettes/';?><?= $myDisc->disc_picture ?>" alt="disc_picture" class="w-50 rounded border border-white mt-1 mx-1 mb-2">
+                <label for="disc_picture" class="w-100 mb-1">Image : </label>    
+                <img src="<?php echo'../../asset/img/jaquettes/';?><?= $myDisc->disc_picture ?>" alt="disc_picture" class="img-flex w-50 rounded border border-white mt-1 mx-1 mb-3">
+                <br>
+                <input type="file" name="disc_picture" id="disc_picture" class="mb-2">
             </div>
+            
+            <input type="hidden" name="disc_old_picture" value="<?= $myDisc->disc_picture ?>">
 
             <div class="d-flex col-12 justify-content-between">
-                <span class='mt-4'><a href="#"><input type ="button" class="btn btn-light" value="Modifier"></input></a></span>
+                <span class='mt-4'><a href="#"><input type ="submit" class="btn btn-light" value="Modifier"></input></a></span>
                 <span class='mt-4'><a href="?p=d_detail&d_id=<?= $myDisc->disc_id ?>"><input type ="button" class="btn btn-light" value="Retour"></input></a></span>
             </div>
-    
+
         </form>
-        
         
         <?php
 

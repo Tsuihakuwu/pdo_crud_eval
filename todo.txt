@@ -1,1 +1,11 @@
-Bouton Modifier avec UPDATE sur target disc_modif > script_disc_modif
+0.06
+
+Bouton Modifier avec UPDATE sur target disc_modif > script_disc_modif -- OK
+Debug : Récupération de l'ancienne valeur en BDD au cas où l'utilisateur ne modifie pas l'image -- OK
+Bouton suppression avec DELETE sur target disc_cdel > script_disc_delete -- OK
+Message en cas de DELETE FOREIGN KEY quand un DELETE sur un artist possedant des disques en BDD -- OK
+Ajout .Ico -- OK
+Modification et mise en forme des differents message d'erreur lors d'injection disc et artist dans URL GET -- OK
+
+0.07
+

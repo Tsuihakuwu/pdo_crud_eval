@@ -23,7 +23,8 @@
         
         <?php
         if ($myArtist == false){
-            echo 'Erreur : L\'artiste n\'existe pas<div>';
+            echo '  <span class="text-danger d-flex w-100 mx-3 mb-3 mt-3">Erreur : L\'artiste n\'existe pas</span>
+                    <a class="mx-3" href="?p=artist"><input type ="button" class="btn btn-light" value="Retour"></input></a></span>';
         }
         else{
             echo 'Artiste N°'.$myArtist->artist_id.
