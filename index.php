@@ -5,7 +5,12 @@
     if (!isset($_SESSION["login"])) 
     {
         include("header.php");
-        include("connexion.php");
+        if(isset($_GET['p']) && $_GET['p']=='insc'){
+            include("inscription.php");
+        }
+        else{
+            include("connexion.php");
+        }
         include("footer.php");
     } 
     else 

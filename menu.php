@@ -7,6 +7,12 @@
         <a href="?p=disc">Liste des disques</a>
     </li>
     <li>
+        <a href="?p=user">Administration utilisateurs</a>
+    </li>
+    <li>
+        <a href="#">placeholder</a>
+    </li>
+    <li>
         <a href="#">placeholder</a>
     </li>
     <li>

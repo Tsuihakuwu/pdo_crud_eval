@@ -1,25 +1,27 @@
 0.06
 
-Bouton Modifier avec UPDATE sur target disc_modif > script_disc_modif -- OK
-Debug : Récupération de l'ancienne valeur en BDD au cas où l'utilisateur ne modifie pas l'image -- OK
-Bouton suppression avec DELETE sur target disc_cdel > script_disc_delete -- OK
-Message en cas de DELETE FOREIGN KEY quand un DELETE sur un artist possedant des disques en BDD -- OK
-Ajout .Ico -- OK
-Modification et mise en forme des differents message d'erreur lors d'injection disc et artist dans URL GET -- OK
+Bouton Modifier avec UPDATE sur target disc_modif > script_disc_modif
+Debug : Récupération de l'ancienne valeur en BDD au cas où l'utilisateur ne modifie pas l'image
+Bouton suppression avec DELETE sur target disc_cdel > script_disc_delete
+Message en cas de DELETE FOREIGN KEY quand un DELETE sur un artist possedant des disques en BDD
+Ajout .Ico
+Modification et mise en forme des differents message d'erreur lors d'injection disc et artist dans URL GET
 
 0.07 - CRUD disc
 
-Refonte du fil d'Ariane et changement du nom et des alias de la page artist_from > artist_modif et a_mod --OK
+Refonte du fil d'Ariane et changement du nom et des alias de la page artist_from > artist_modif et a_mod
 
 0.08 - Refonte fil + Organisation fichiers
 
+Modification menu pour vue admin users
+Ajout nouvel page inscription + Formulaire inscription
+Création script pour contrôle des données du formulaire avec retour erreur
 
-
-
-
+0.09 - Création de compte
 
 À faire : 
 
+* Completer script validation formulaire avec contrôle password aux normes
+* /!\ Cryptage password  /!\
 * Gérer vues selon auth_level usr ou a_mod
-* Formulaire inscription
-* Menu inscris en vue admin avec gestion attribution de droits
+* Menu inscris en vue admin avec gestion attribution de droits > Administration utilisateurs

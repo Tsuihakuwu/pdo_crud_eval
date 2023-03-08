@@ -9,7 +9,7 @@
         header("Location:/index.php");
     }
     elseif ($nom == Null || $url == Null) {
-        header("Location:/index.php?p=a_form&id=".$id);
+        header("Location:?p=a_form&id=".$id);
         exit;
     }
 

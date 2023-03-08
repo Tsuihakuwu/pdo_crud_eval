@@ -8,9 +8,11 @@
             }
             ?>
             <div id="sb_co" class="d-flex justify-content-center pt-3">
-                <input type="submit" value="Envoyer" class="rounded">
+                <input type="submit" value="Envoyer" class="btn btn-light rounded">
             </div>
     </fieldset>
 </form>
 
-<a href='#' class='d-flex justify-content-right'>Mot de passe oublié ?</a>
+<a href='?p=insc' class='d-flex justify-content-center mt-3'>Inscription</a>
+
+<a href='#' class='d-flex justify-content-center mt-3'>Mot de passe oublié ?</a>
