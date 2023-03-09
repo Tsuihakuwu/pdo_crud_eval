@@ -18,10 +18,13 @@ Ajout nouvel page inscription + Formulaire inscription
 Création script pour contrôle des données du formulaire avec retour erreur
 
 0.09 - Création de compte
+Completer script validation formulaire avec contrôle password
+
+0.10 - Contrôle formulaire inscription 
 
 À faire : 
 
-* Completer script validation formulaire avec contrôle password aux normes
+* Finir retour inscription et redirection vers la bonne page
 * /!\ Cryptage password  /!\
 * Gérer vues selon auth_level usr ou a_mod
 * Menu inscris en vue admin avec gestion attribution de droits > Administration utilisateurs

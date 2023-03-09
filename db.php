@@ -4,9 +4,9 @@ function connexionBase(){
     
     $db="record";
     $dbhost="localhost";
-    $dbport=3306;
-    $dbuser="root";
-    $dbpasswd="";
+    $dbport=8080;
+    $dbuser="admin";
+    $dbpasswd="mdpbdd1";
     $charset="utf8";
     
     try 
