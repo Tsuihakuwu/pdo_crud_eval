@@ -20,11 +20,17 @@ Création script pour contrôle des données du formulaire avec retour erreur
 0.09 - Création de compte
 Completer script validation formulaire avec contrôle password
 
-0.10 - Contrôle formulaire inscription 
+0.10 - Contrôle formulaire inscription
 
-À faire : 
+Modification structure BDD pour usr_mail
+Test pour retour inscription et redirection vers la bonne page
 
-* Finir retour inscription et redirection vers la bonne page
-* /!\ Cryptage password  /!\
+0.11 - Modification BDD  et création profils test
+
+Contruction de la requête et execution pour création nouvel utilisateur
+Cryptage password
+Décryptage password pour réécriture de la page script_connexion
+Création de 3 profils - Utilisateur (level 0) - Administrateur (level 1) - Superadmin (level 2) avec mot de passe crypté
+
 * Gérer vues selon auth_level usr ou a_mod
 * Menu inscris en vue admin avec gestion attribution de droits > Administration utilisateurs

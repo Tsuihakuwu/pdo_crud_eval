@@ -2,11 +2,9 @@
     <fieldset class="w-25">
         
         <legend>Inscription</legend>
-    
-        <?php var_dump($_SESSION['ctrl_err']); ?>
 
             <label for="username" class="col-12 mb-1">Nom d'utilisateur :</label>
-            <input type="text" class="col-12 mb-3" id="username" name="username"></input>
+            <input type="text" class="col-12 mb-1" id="username" name="username"></input>
             <?php
                 if(isset($_SESSION['ctrl_err'])){
                     switch($_SESSION['ctrl_err'][0]){
@@ -30,7 +28,7 @@
             </small>
 
             <label for="mail" class="col-12 mb-1">Adresse mail : </label>
-            <input type="text" class="col-12 mb-3" id="mail" name="mail"></input>
+            <input type="text" class="col-12 mb-1" id="mail" name="mail"></input>
             <?php
                 if(isset($_SESSION['ctrl_err'])){
                     switch($_SESSION['ctrl_err'][1]){
@@ -54,7 +52,7 @@
             </small>
 
             <label for="passwd" class="col-12 mb-1">Mot de passe : </label>
-            <input type="password" class="col-12 mb-3" id="passwd" name="passwd"></input>
+            <input type="password" class="col-12 mb-1" id="passwd" name="passwd"></input>
             <?php
                 if(isset($_SESSION['ctrl_err'])){
                     switch($_SESSION['ctrl_err'][2]){
@@ -76,7 +74,7 @@
             ?>
         
             <label for="passwd_v" class="col-12 mb-1">Vérification du mot de passe : </label>
-            <input type="password" class="col-12 mb-3" id="passwd_v" name="passwd_v"></input>
+            <input type="password" class="col-12 mb-1" id="passwd_v" name="passwd_v"></input>
             <?php
                 if(isset($_SESSION['ctrl_err'])){
                     switch($_SESSION['ctrl_err'][3]){

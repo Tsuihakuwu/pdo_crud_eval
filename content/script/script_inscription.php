@@ -70,14 +70,66 @@
 
     //var_dump($ctrl_err);
 
-    foreach($ctrl_err as $error)
-    {
+
+
+    if($ctrl_err[0]==0&&$ctrl_err[1]==0&&$ctrl_err[2]==0&&$ctrl_err[3]==0){
+        //Formulaire valide > Envoi de la requête SQL
+        echo 'Formulaire Valide';
+
+        // Verif de mes cases formulaire username / mail / passwd / passwd_v avant requête par précaution
+
+        $myFields = array ('username','mail','passwd','passwd_v');
+
+        foreach($myFields as $ctrlFields){
+            if (isset($_REQUEST[$ctrlFields]) && $_REQUEST[$ctrlFields] != "") {
+                ${"my_new_".$ctrlFields} = $_REQUEST[$ctrlFields];
+            }
+            else {
+                ${"my_new_".$ctrlFields} = Null;
+            }
+        }
+
+        if ($my_new_username == Null ||$my_new_mail == Null ||$my_new_passwd == Null ||$my_new_passwd_v == Null) {
+            header("Location:?p=insc");
+            exit;
+        }
+
+        var_dump($my_new_username, password_hash($my_new_passwd,PASSWORD_DEFAULT), $my_new_mail);
+
+        require "../../db.php";
+        $db = connexionBase();
         
+        try {
+            $requete = $db->prepare("INSERT INTO user (usr_log, usr_pwd, usr_mail, auth_level) VALUES (:log, :passwd, :mail, 0);");
+            // Association des valeurs aux paramètres via bindValue() :
+            $requete->bindValue(":log", $my_new_username, PDO::PARAM_STR);
+            $requete->bindValue(":passwd", password_hash($my_new_passwd,PASSWORD_DEFAULT), PDO::PARAM_STR);
+            $requete->bindValue(":mail", $my_new_mail, PDO::PARAM_STR);
+        
+            // Lancement de la requête :
+            $requete->execute();
+        
+            // Libération de la requête (utile pour lancer d'autres requêtes par la suite) :
+            $requete->closeCursor();
+        }    
+        // Gestion des erreurs
+        catch (Exception $e) {
+            var_dump($requete->queryString);
+            var_dump($requete->errorInfo());
+            echo "Erreur : " . $requete->errorInfo()[2] . "<br>"; 
+            die("Fin du script (script_artist_ajout.php)");
+        }
+        
+        // Si OK: redirection vers la page artists.php
+        header("Location:/index.php");
+        
+        // Fermeture du script
+        exit;
     }
-
-    session_start();
-    $_SESSION['ctrl_err'] = $ctrl_err;
-
-    //header("Location:/index.php?p=insc");
-
+    else {
+        //Formulaire non valide > Redirection sur le formulaire pour afficher les code erreur
+        session_start();
+        $_SESSION['ctrl_err'] = $ctrl_err;
+        header("Location:/index.php?p=insc");
+    }
 ?>
