@@ -1,3 +1,5 @@
+<?php if(!isset($_SESSION["login"])||$_SESSION["auth_lvl"]<=0){include('../script/script_auth_lv0.php');} ?>
+
 <form action ="content/script/script_artist_ajout.php" method="post">
 
     <label for="nom_for_label">Nom de l'artiste :</label><br>

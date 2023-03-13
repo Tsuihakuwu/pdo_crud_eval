@@ -1,3 +1,5 @@
+<?php if(!isset($_SESSION["login"])||$_SESSION["auth_lvl"]<=0){include('../script/script_auth_lv0.php');} ?>
+
 <?php
         include('db.php');
         
@@ -8,9 +10,13 @@
         $query->closeCursor();
 ?>
 
-<div id="control" class="d-flex justify-content-center">
-    <a href="?p=add_disc"><input type="button" class="btn btn-light" value="Ajouter un disque"></input></a>
-</div>
+
+<!-- Affichage du bouton d'ajout disque uniquement pour auth_level > 0 -->
+<?php if(isset($_SESSION["auth_lvl"])&&$_SESSION["auth_lvl"]>0)
+    echo    '<div id="control" class="d-flex justify-content-center">
+                <a href="?p=add_disc"><input type="button" class="btn btn-light" value="Ajouter un disque"></input></a>
+            </div>';
+?>
 
 <h1 class="mx-3 mb-3">Liste des disques (<?php echo count($tab);?>)</h1>
 
@@ -25,7 +31,15 @@
             <span><b>Label : </b><?= $disc->disc_label ?></span>
             <span><b>Année : </b><?= $disc->disc_year ?></span>
             <span><b>Genre : </b><?= $disc->disc_genre ?></span>
-            <span class='mt-4'><a href="?p=d_detail&d_id=<?= $disc->disc_id ?>"><input type ="button" class="btn btn-light" value="Détails"></input></a></span>
+            <!-- Affichage du bouton détail uniquement pour auth_level > 0 -->
+            <?php if(isset($_SESSION["auth_lvl"])&&$_SESSION["auth_lvl"]>0)
+                echo '<span class="mt-4"><a href="?p=d_detail&d_id='.$disc->disc_id.'"><input type ="button" class="btn btn-light" value="Détails"></input></a></span>';
+            ?>
+            <!-- Affichage du prix du disque si auth_level = 0 -->
+            <?php if(isset($_SESSION["auth_lvl"])&&$_SESSION["auth_lvl"]==0)
+                echo '<span><b>Prix : </b>'.$disc->disc_price.'</span>';
+            ?>
+
         </div>
 <?php endforeach; ?>
 </div>

@@ -1,3 +1,7 @@
+<div id="sb_co" class="d-flex justify-content-center pt-3">
+    <input type="submit" value="Valider" class="btn btn-light rounded mx-2">
+</div>
+
 <form class="d-flex justify-content-center" action="content/script/script_inscription.php" method="POST">
     <fieldset class="w-25">
         

@@ -32,5 +32,14 @@ Cryptage password
 Décryptage password pour réécriture de la page script_connexion
 Création de 3 profils - Utilisateur (level 0) - Administrateur (level 1) - Superadmin (level 2) avec mot de passe crypté
 
-* Gérer vues selon auth_level usr ou a_mod
+0.12 - Gestion des vues Utilisateur Administrateur et Superadmin
+
+Gestion des vues selon auth_level usr
+Création page erreur_auth
+Création page user_affichage
+Création page user_modif
+Modification fil d'Ariane et index pour correspondance avec les nouvelles pages créées
+
+* Finir de modifier la page script_user_modif.php /!\
 * Menu inscris en vue admin avec gestion attribution de droits > Administration utilisateurs
+* Envois de mail pour réinitialisation de mot de passe

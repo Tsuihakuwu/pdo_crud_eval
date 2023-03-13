@@ -1,3 +1,5 @@
+<?php if(!isset($_SESSION["login"])||$_SESSION["auth_lvl"]<=0){include('../script/script_auth_lv0.php');} ?>
+
 <?php
 
     require "db.php";

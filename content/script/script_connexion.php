@@ -17,8 +17,11 @@ if(!password_verify($_POST['pwd'],$user->usr_pwd))
 }
 else
 {
-    header("Location:/index.php");
     $_SESSION['login'] = $_POST['log'];
-    $_SESSION['password'] = $_POST['pwd'];
+    $_SESSION['auth_lvl'] = $user->auth_level;
+
+    echo $_SESSION['auth_lvl'];
+
+    header("Location:/index.php");
 }
 ?>
