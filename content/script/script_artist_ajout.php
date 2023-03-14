@@ -20,7 +20,6 @@
     require "../../db.php";
     $db = connexionBase();
 
-
 try {
     // Construction de la requête INSERT sans injection SQL :
     $requete = $db->prepare("INSERT INTO artist (artist_name, artist_url) VALUES (:nom, :url);");

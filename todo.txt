@@ -40,6 +40,14 @@ Création page user_affichage
 Création page user_modif
 Modification fil d'Ariane et index pour correspondance avec les nouvelles pages créées
 
-* Finir de modifier la page script_user_modif.php /!\
-* Menu inscris en vue admin avec gestion attribution de droits > Administration utilisateurs
-* Envois de mail pour réinitialisation de mot de passe
+0.13 - Modifications infos user depuis la vue page admin
+
+Menu inscris en vue admin avec gestion attribution de droits > Administration utilisateurs avec regex et controle formulaire
+Création script_user_modif.php avec retour d'erreur sur le formulaire
+Précision en smalltxt des exigences des champs inscription
+Récupereration données précedemment saisies à l'inscription dans le formulaire pour éviter à l'utilisateur de tout réécrire
+
+* Jauge pour mesurer la sécurité du mot de passe
+
+* Réinitialisation mot de passe déclanchable par l'administrateur
+* Envoi de mail pour réinitialisation de mot de passe

@@ -1,3 +1,10 @@
+
+<?php 
+    if(isset($_SESSION['n_usr'])&&$_SESSION['n_usr'] == true){
+        echo '<span class="d-flex justify-content-center text-success mt-3 mb-3">Utilisateur créé !</span>';
+    }
+?>
+
 <form class="d-flex w-100 justify-content-center" action="/content/script/script_connexion.php" method="POST">
     <fieldset>
         <legend>Connexion</legend>

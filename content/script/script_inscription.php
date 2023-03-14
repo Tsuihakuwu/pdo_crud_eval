@@ -13,7 +13,7 @@
         $ctrl_err[0]=1;
     }
     else if(!preg_match('/^[A-Za-z][A-Za-z0-9]{4,15}$/', $usr)){
-        //Username doit contenir entre 5 et 15 caractères alphanumériques
+        //Username doit contenir entre 5 et 16 caractères alphanumériques
         $ctrl_err[0]=2;
         echo 'Erreur username non conforme<br>';
     }
@@ -26,10 +26,10 @@
         echo 'Erreur mail champ vide<br>';
         $ctrl_err[1]=1;
     }
-    else if(!preg_match('/^[A-Za-z][A-Za-z0-9]{4,15}$/', $usr)){
-        //Username doit contenir entre 5 et 15 caractères alphanumériques
-        $ctrl_err[0]=2;
-        echo 'Erreur username non conforme<br>';
+    else if(!preg_match('/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/i', $mail)){
+        //Sutructure mail non valide
+        $ctrl_err[1]=2;
+        echo 'Erreur mail non conforme<br>';
     }
     else { echo 'Mail valide'; }
 
@@ -40,7 +40,7 @@
         echo 'Erreur passwd champ vide<br>';
         $ctrl_err[2]=1;
     }
-    else if (!preg_match('/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.* )(?=.*[^a-zA-Z0-9]).{8,16}$/m',$pwd)){
+    else if (!preg_match('/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.* )(?=.*[^a-zA-Z0-9]).{7,31}$/m',$pwd)){
         //Password doit contenir minuscule, majuscule, caractère spécial, numérique et être d'une longueur entre 8 et 32 caractères
         { 
             echo 'Password non conforme<br>';
@@ -94,7 +94,7 @@
             exit;
         }
 
-        var_dump($my_new_username, password_hash($my_new_passwd,PASSWORD_DEFAULT), $my_new_mail);
+        //var_dump($my_new_username, password_hash($my_new_passwd,PASSWORD_DEFAULT), $my_new_mail);
 
         require "../../db.php";
         $db = connexionBase();
@@ -120,7 +120,9 @@
             die("Fin du script (script_artist_ajout.php)");
         }
         
-        // Si OK: redirection vers la page artists.php
+        // Si OK: redirection vers la page index.php
+        session_start();
+        $_SESSION['n_usr']=true;
         header("Location:/index.php");
         
         // Fermeture du script
@@ -130,6 +132,7 @@
         //Formulaire non valide > Redirection sur le formulaire pour afficher les code erreur
         session_start();
         $_SESSION['ctrl_err'] = $ctrl_err;
+        $_SESSION['stored_ent'] = array($_POST['username'],$_POST['mail']);
         header("Location:/index.php?p=insc");
     }
 ?>

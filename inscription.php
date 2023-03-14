@@ -1,14 +1,14 @@
-<div id="sb_co" class="d-flex justify-content-center pt-3">
-    <input type="submit" value="Valider" class="btn btn-light rounded mx-2">
-</div>
-
 <form class="d-flex justify-content-center" action="content/script/script_inscription.php" method="POST">
-    <fieldset class="w-25">
+    <fieldset class="w-50">
         
         <legend>Inscription</legend>
 
-            <label for="username" class="col-12 mb-1">Nom d'utilisateur :</label>
-            <input type="text" class="col-12 mb-1" id="username" name="username"></input>
+            <label for="username" class="col-12 mb-1">Nom d'utilisateur <small>(Caractères alphanumériques uniquement; entre 5 et 16 caratères)</small> :</label>
+            <input type="text" class="col-12 mb-1" id="username" name="username"
+            <?php
+            if((isset($_SESSION['stored_ent'][0]) && $_SESSION['stored_ent'][0] != "")){ echo ' value="'.$_SESSION['stored_ent'][0].'"'; }
+            ?>            
+            ></input>
             <?php
                 if(isset($_SESSION['ctrl_err'])){
                     switch($_SESSION['ctrl_err'][0]){
@@ -22,7 +22,7 @@
                             break;
                         case '2':
                             echo '<small class="d-flex text-align-end text-danger">';
-                            echo 'Le nom d\'utilisateur doit contenir entre entre 5 et 15 caractères alphanumériques';
+                            echo 'Le nom d\'utilisateur doit contenir entre entre 5 et 16 caractères alphanumériques';
                             break;
                     }
                     echo '</small>';
@@ -31,8 +31,12 @@
 
             </small>
 
-            <label for="mail" class="col-12 mb-1">Adresse mail : </label>
-            <input type="text" class="col-12 mb-1" id="mail" name="mail"></input>
+            <label for="mail" class="col-12 mb-1">Adresse mail <small>(Format monnom@mondomaine.fr)</small> : </label>
+            <input type="text" class="col-12 mb-1" id="mail" name="mail"
+            <?php
+            if((isset($_SESSION['stored_ent'][1]) && $_SESSION['stored_ent'][1] != "")){ echo ' value="'.$_SESSION['stored_ent'][1].'"'; }
+            ?>            
+            ></input>
             <?php
                 if(isset($_SESSION['ctrl_err'])){
                     switch($_SESSION['ctrl_err'][1]){
@@ -55,7 +59,7 @@
 
             </small>
 
-            <label for="passwd" class="col-12 mb-1">Mot de passe : </label>
+            <label for="passwd" class="col-12 mb-1">Mot de passe <small>(Doit doit contenir minuscule, majuscule, caractère spécial, numérique et être d'une longueur comprise entre 8 et 32 caractères)</small> : </label>
             <input type="password" class="col-12 mb-1" id="passwd" name="passwd"></input>
             <?php
                 if(isset($_SESSION['ctrl_err'])){
@@ -70,14 +74,14 @@
                             break;
                         case '2':
                             echo '<small class="d-flex text-align-end text-danger">';
-                            echo 'Le mot de passe doit doit contenir minuscule, majuscule, caractère spécial, numérique et être d\'une longueur entre 8 et 32 caractères';
+                            echo 'Le mot de passe n\'est pas valide';
                             break;
                     }
                 echo '</small>';
                 }
             ?>
         
-            <label for="passwd_v" class="col-12 mb-1">Vérification du mot de passe : </label>
+            <label for="passwd_v" class="col-12 mb-1">Vérification du mot de passe <small>(Doit être identique au mot de passe précédent)</small> : </label>
             <input type="password" class="col-12 mb-1" id="passwd_v" name="passwd_v"></input>
             <?php
                 if(isset($_SESSION['ctrl_err'])){
