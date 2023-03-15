@@ -10,7 +10,7 @@
         $query->closeCursor();
 ?>
 
-<h1 class="mx-3 mb-3">Liste des utilisateurs inscris (<?php echo count($tab);?>)</h1>
+<h1 class="mx-3 mb-3">Liste des utilisateurs inscrits (<?php echo count($tab);?>)</h1>
 
 <div class="w-100 d-flex justify-content-center">
     <table class="table table-striped table-dark w-75">
@@ -24,15 +24,21 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($tab as $user): ?>
-                    <tr>
-                        <td><?= $user->id_user ?></td>
-                        <td><?= $user->usr_log ?></td>
-                        <td><?= $user->usr_mail ?></td>
-                        <td><?= $user->auth_level ?></td>
-                        <td><a href="?p=u_mod&u_id=<?= $user->id_user ?>"><input type ="button" value="Modifier"></input></a></td>
-                    </tr>
-            <?php endforeach; ?>
+            <?php foreach ($tab as $user){
+                echo '<tr>
+                        <td>'.$user->id_user.'</td>
+                        <td>'.$user->usr_log.'</td>
+                        <td>'.$user->usr_mail.'</td>
+                        <td>'.$user->auth_level.'</td>';
+                if($user->auth_level>=2){ 
+                    echo '<td><a class="mx-1" href="?p=u_mod&u_id=<'.$user->id_user.'"><input type ="button" value="Modifier"></input></a></td>';
+                }
+                else{
+                    echo '<td><a class="mx-1" href="?p=u_mod&u_id=<'.$user->id_user.'"><input type ="button" value="Modifier"></input></a><a href="?p=u_cdel&u_id='.$user->id_user.'"><input type ="button" value="Supprimer"></input></a></td>';
+                echo '</tr>';
+                }
+            }
+            ?>
         </tbody>
     </table>
 </div>

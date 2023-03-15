@@ -46,8 +46,10 @@ Menu inscris en vue admin avec gestion attribution de droits > Administration ut
 Création script_user_modif.php avec retour d'erreur sur le formulaire
 Précision en smalltxt des exigences des champs inscription
 Récupereration données précedemment saisies à l'inscription dans le formulaire pour éviter à l'utilisateur de tout réécrire
+Ajout oeil pour afficher/masquer mot de passe sur formulaire inscription et connexion
+Bouton et script de suppresion d'un utilisateur à partir du menu liste user
+Bloquage suppression compte auth_level 2+
 
 * Jauge pour mesurer la sécurité du mot de passe
-
 * Réinitialisation mot de passe déclanchable par l'administrateur
 * Envoi de mail pour réinitialisation de mot de passe

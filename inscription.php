@@ -1,3 +1,5 @@
+
+
 <form class="d-flex justify-content-center" action="content/script/script_inscription.php" method="POST">
     <fieldset class="w-50">
         
@@ -58,9 +60,11 @@
             ?>
 
             </small>
-
             <label for="passwd" class="col-12 mb-1">Mot de passe <small>(Doit doit contenir minuscule, majuscule, caractère spécial, numérique et être d'une longueur comprise entre 8 et 32 caractères)</small> : </label>
-            <input type="password" class="col-12 mb-1" id="passwd" name="passwd"></input>
+            <div class="input-group">
+                <input type="password" class="col-12 mb-1" id="toggle-input1" name="passwd"></input>
+                <button id="toggle-password1" type="button" class="" aria-label="Show password as plain text. Warning: this will display your password on the screen.">                </button>
+            </div>
             <?php
                 if(isset($_SESSION['ctrl_err'])){
                     switch($_SESSION['ctrl_err'][2]){
@@ -80,9 +84,13 @@
                 echo '</small>';
                 }
             ?>
-        
+
+
             <label for="passwd_v" class="col-12 mb-1">Vérification du mot de passe <small>(Doit être identique au mot de passe précédent)</small> : </label>
-            <input type="password" class="col-12 mb-1" id="passwd_v" name="passwd_v"></input>
+            <div class="input-group">
+                <input type="password" class="col-12 mb-1" id="toggle-input2" name="passwd_v"></input>
+                <button id="toggle-password2" type="button" class="" aria-label="Show password as plain text. Warning: this will display your password on the screen.">                </button>
+            </div>
             <?php
                 if(isset($_SESSION['ctrl_err'])){
                     switch($_SESSION['ctrl_err'][3]){
@@ -108,6 +116,7 @@
             ?>
 
             </small>
+        
 
         <div id="sb_co" class="d-flex justify-content-center pt-3">
             <input type="submit" value="Valider" class="btn btn-light rounded mx-2">

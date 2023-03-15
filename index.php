@@ -63,6 +63,9 @@
                     case 'u_mod':
                         include('content/user/user_modif.php');
                         break;
+                    case 'u_cdel':
+                        include('content/user/user_cdel.php');
+                        break;
                 }
             }
         }

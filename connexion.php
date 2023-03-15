@@ -1,15 +1,19 @@
-
 <?php 
     if(isset($_SESSION['n_usr'])&&$_SESSION['n_usr'] == true){
         echo '<span class="d-flex justify-content-center text-success mt-3 mb-3">Utilisateur créé !</span>';
     }
 ?>
 
-<form class="d-flex w-100 justify-content-center" action="/content/script/script_connexion.php" method="POST">
+<form class="d-flex justify-content-center" action="/content/script/script_connexion.php" method="POST">
     <fieldset>
         <legend>Connexion</legend>
-            <label for="log" class="d-flex justify-content-left">Login : </label><input type="text" class="d-flex justify-content-left" id="log" name="log"></input>
-            <label class="d-flex justify-content-left" for="pwd">Mot de passe :</label><input type="password" class="d-flex justify-content-left" id="pwd" name="pwd"></input>
+            <label for="log" class="col-12 mb-1">Login : </label>
+            <input type="text" class="col-12 mb-1" id="log" name="log"></input>
+            <label class="col-12 mb-1" for="pwd">Mot de passe :</label>
+            <div class="input-group">
+                <input type="password" class="col-12 mb-1" id="toggle-input1" name="pwd"></input>
+                <button id="toggle-password1" type="button" class="col-12 mb-1" aria-label="Show password as plain text. Warning: this will display your password on the screen."></button>
+            </div>
             <?php if(isset($_SESSION['error_login'])&&$_SESSION['error_login']){
                 echo '<span class="d-flex justify-content-center text-danger">ERREUR LOGIN</span>';
             }
