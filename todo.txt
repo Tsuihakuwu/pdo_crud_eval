@@ -50,6 +50,12 @@ Ajout oeil pour afficher/masquer mot de passe sur formulaire inscription et conn
 Bouton et script de suppresion d'un utilisateur à partir du menu liste user
 Bloquage suppression compte auth_level 2+
 
+0.14 - Message Jquery Password
+
+Implémentation message dynamique avec controle REGEX sur champ mot de passe avec Jquery
+
+
+* Message discord pour ARTISTS.PHP et la coquille quand on créé le premier form artist sur read myArtist
 * Jauge pour mesurer la sécurité du mot de passe
 * Réinitialisation mot de passe déclanchable par l'administrateur
 * Envoi de mail pour réinitialisation de mot de passe

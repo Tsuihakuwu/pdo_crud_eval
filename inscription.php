@@ -1,5 +1,3 @@
-
-
 <form class="d-flex justify-content-center" action="content/script/script_inscription.php" method="POST">
     <fieldset class="w-50">
         
@@ -64,6 +62,7 @@
             <div class="input-group">
                 <input type="password" class="col-12 mb-1" id="toggle-input1" name="passwd"></input>
                 <button id="toggle-password1" type="button" class="" aria-label="Show password as plain text. Warning: this will display your password on the screen.">                </button>
+                <span id="passstrength"></span>
             </div>
             <?php
                 if(isset($_SESSION['ctrl_err'])){
@@ -125,3 +124,24 @@
         
     </fieldset>
 </form>
+
+<script>
+$('#toggle-input1').keyup(function(e) {
+     var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+     var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+     var enoughRegex = new RegExp("(?=.{6,}).*", "g");
+     if (false == enoughRegex.test($(this).val())) {
+             $('#passstrength').html('Plus de caractères');
+     } else if (strongRegex.test($(this).val())) {
+             $('#passstrength').className = 'OK';
+             $('#passstrength').html('Fort');
+     } else if (mediumRegex.test($(this).val())) {
+             $('#passstrength').className = 'alert';
+             $('#passstrength').html('Moyen');
+     } else {
+             $('#passstrength').className = 'error';
+             $('#passstrength').html('Faible');
+     }
+     return true;
+});
+</script>
