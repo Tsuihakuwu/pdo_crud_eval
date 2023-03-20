@@ -12,7 +12,7 @@
             <label class="col-12 mb-1" for="pwd">Mot de passe :</label>
             <div class="input-group">
                 <input type="password" class="col-12 mb-1" id="toggle-input1" name="pwd"></input>
-                <button id="toggle-password1" type="button" class="col-12 mb-1" aria-label="Show password as plain text. Warning: this will display your password on the screen."></button>
+                <button id="toggle-password1" type="button" class="col-12 mb-1" aria-label="Attention: Ce bouton affichera votre mot de passe en texte visible."></button>
             </div>
             <?php if(isset($_SESSION['error_login'])&&$_SESSION['error_login']){
                 echo '<span class="d-flex justify-content-center text-danger">ERREUR LOGIN</span>';

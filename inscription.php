@@ -61,8 +61,32 @@
             <label for="passwd" class="col-12 mb-1">Mot de passe <small>(Doit doit contenir minuscule, majuscule, caractère spécial, numérique et être d'une longueur comprise entre 8 et 32 caractères)</small> : </label>
             <div class="input-group">
                 <input type="password" class="col-12 mb-1" id="toggle-input1" name="passwd"></input>
-                <button id="toggle-password1" type="button" class="" aria-label="Show password as plain text. Warning: this will display your password on the screen.">                </button>
-                <span id="passstrength"></span>
+                <button id="toggle-password1" type="button" class="" aria-label="Attention: Ce bouton affichera votre mot de passe en texte visible."></button>
+                <!-- <span id="passstrength"></span> -->
+            </div>
+            
+            <div class="progress-stacked mt-1 mb-1">
+            
+                <div class="progress" role="progressbar" aria-label="SegmentMin" aria-valuenow="20" aria-valuemin="0" aria-valuemax="20">
+                    <div class="progress-bar" id="passStrMin"></div>
+                </div>
+                
+                <div class="progress" role="progressbar" aria-label="SegmentMaj" aria-valuenow="20" aria-valuemin="0" aria-valuemax="20">
+                    <div class="progress-bar bg-success" id="passStrMaj"></div>
+                </div>
+                
+                <div class="progress" role="progressbar" aria-label="SegmentSpec" aria-valuenow="20" aria-valuemin="0" aria-valuemax="20">
+                    <div class="progress-bar bg-info" id="passStrSpec"></div>
+                </div>
+
+                <div class="progress" role="progressbar" aria-label="SegmentNum" aria-valuenow="20" aria-valuemin="0" aria-valuemax="20">
+                    <div class="progress-bar bg-warning" id="passStrNum"></div>
+                </div>
+
+                <div class="progress" role="progressbar" aria-label="SegmentLen" aria-valuenow="20" aria-valuemin="0" aria-valuemax="20">
+                    <div class="progress-bar bg-danger" id="passStrLen"></div>
+                </div>
+
             </div>
             <?php
                 if(isset($_SESSION['ctrl_err'])){
@@ -88,7 +112,7 @@
             <label for="passwd_v" class="col-12 mb-1">Vérification du mot de passe <small>(Doit être identique au mot de passe précédent)</small> : </label>
             <div class="input-group">
                 <input type="password" class="col-12 mb-1" id="toggle-input2" name="passwd_v"></input>
-                <button id="toggle-password2" type="button" class="" aria-label="Show password as plain text. Warning: this will display your password on the screen.">                </button>
+                <button id="toggle-password2" type="button" class="" aria-label="Attention: Ce bouton affichera votre mot de passe en texte visible."></button>
             </div>
             <?php
                 if(isset($_SESSION['ctrl_err'])){
@@ -127,21 +151,35 @@
 
 <script>
 $('#toggle-input1').keyup(function(e) {
-     var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
-     var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
-     var enoughRegex = new RegExp("(?=.{6,}).*", "g");
-     if (false == enoughRegex.test($(this).val())) {
-             $('#passstrength').html('Plus de caractères');
-     } else if (strongRegex.test($(this).val())) {
-             $('#passstrength').className = 'OK';
-             $('#passstrength').html('Fort');
-     } else if (mediumRegex.test($(this).val())) {
-             $('#passstrength').className = 'alert';
-             $('#passstrength').html('Moyen');
-     } else {
-             $('#passstrength').className = 'error';
-             $('#passstrength').html('Faible');
-     }
-     return true;
+
+    
+
+    var minRegex = new RegExp("/[a-z]+/g");
+    // var majRegex = new RegExp("/[A-Z]+/g");
+    // var specRegex = new RegExp("/[!@#\$%\^\&*\)\(+=._-]/g");
+    // var numRegex = new RegExp("/\d+/g");
+    // var lengthRegex = new RegExp("/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.* )(?=.*[^a-zA-Z0-9]).{7,31}$/");
+
+    if (minRegex.test($(this).val())) {
+        $('#passStrMin').width('20%');
+    }
+
+    // if (majRegex.test($(this).val())) {
+    //     $('#passStrMaj').width('20%');
+    // }
+
+    // if (specRegex.test($(this).val())) {
+    //     $('#passStrSpec').width('20%');
+    // }
+
+    // if (numRegex.test($(this).val())) {
+    //     $('#passStrNum').width('20%');
+    // }
+
+    // if (lengthRegex.test($(this).val())) {
+    //     $('#passStrLen').width('20%');
+    // }
+    
+    return true;
 });
 </script>

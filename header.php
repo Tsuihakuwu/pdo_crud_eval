@@ -8,7 +8,6 @@
     <link href='/asset/css/styles.css' rel='stylesheet'>
     <link rel="icon" href="/asset/img/vr_favicon.ico">
     <script src="asset/js/jquery.js"></script>
-    <script src="asset/js/passwordstr.js"></script>
     <title>Velvet Records</title>
 </head>
 <body>
