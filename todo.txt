@@ -52,12 +52,17 @@ Bloquage suppression compte auth_level 2+
 
 0.14 - Message Jquery Password
 
-Implémentation message dynamique avec controle REGEX sur champ mot de passe avec Jquery
+Implémentation message dynamique avec controle REGEX sur champ mot de passe avec Jquery -- Retiré et géré avec les progressbar
 
 0.15 - Structure REGEX pour progressbar
 
 Progress bar pour mesurer la sécurité du mot de passe
 
-* Message discord pour ARTISTS.PHP et la coquille quand on créé le premier form artist sur read myArtist
+0.16 - Gestion couleur progressbar fonction des regex
+
+Multiple progress bar pour gérer les differentes conditions et couleur adapté selon critères mot de passe
+Ajout de hover sur les differents tableaux artist, disc et user
+
+
 * Réinitialisation mot de passe déclanchable par l'administrateur
 * Envoi de mail pour réinitialisation de mot de passe

@@ -16,7 +16,7 @@
     <a href="?p=add_artist"><input type="button" class="btn btn-light" value="Ajouter un artiste"></input></a>
 </div>
 
-<table class='table table-dark justify-content-center d-flex w-100 mt-3'>
+<table class='table table-dark justify-content-center d-flex w-100 mt-3 trlighter'>
 <tr>
     <th>ID</th>
     <th>Nom</th>

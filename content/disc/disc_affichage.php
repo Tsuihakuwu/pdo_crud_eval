@@ -37,7 +37,6 @@
             <?php if(isset($_SESSION["auth_lvl"])&&$_SESSION["auth_lvl"]==0)
                 echo '<span><b>Prix : </b>'.$disc->disc_price.'</span>';
             ?>
-
         </div>
 <?php endforeach; ?>
 </div>
