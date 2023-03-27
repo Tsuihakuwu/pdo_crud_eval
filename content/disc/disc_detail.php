@@ -61,7 +61,7 @@
                 <input type="text" name="disc_price" id="disc_price" readonly value="<?= $myDisc->disc_price ?>" class="w-100 mb-2">
             </div>
             <div>
-                <span class="w-100 mb-1">Picture :</span><br>
+                <span class="w-100 mb-1">Jaquette :</span><br>
                 <img src="<?php echo'../../asset/img/jaquettes/';?><?= $myDisc->disc_picture ?>" alt="disc_picture" class="w-50 rounded border border-white mt-1 mx-1 mb-2">
             </div>
 

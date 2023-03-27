@@ -8,6 +8,9 @@
         if(isset($_GET['p']) && $_GET['p']=='insc'){
             include("inscription.php");
         }
+        else if(isset($_GET['p']) && $_GET['p']=='reset'){
+            include("reset_pw.php");
+        }
         else{
             include("connexion.php");
         }

@@ -26,4 +26,4 @@
 
 <a href='?p=insc' class='d-flex justify-content-center mt-3'>Inscription</a>
 
-<a href='#' class='d-flex justify-content-center mt-3'>Mot de passe oublié ?</a>
+<a href='?p=reset' class='d-flex justify-content-center mt-3'>Mot de passe oublié ?</a>

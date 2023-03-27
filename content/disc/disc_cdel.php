@@ -27,12 +27,12 @@
     <?php echo '<span><b>Disque N°'.$myDisc->disc_id.
                 '</b><br>Titre : '.$myDisc->disc_title.
                 '<br>Artiste : '.$myDisc->artist_name.
-                '<br>Image : <br> <img src="../../asset/img/jaquettes/'.$myDisc->disc_picture.'" alt="disc_picture" class="w-50 rounded border border-white mt-2 mx-1 mb-2"><br class="mb-3"></span>';
+                '<br>Jaquette : <br> <img src="../../asset/img/jaquettes/'.$myDisc->disc_picture.'" alt="disc_picture" class="w-50 rounded border border-white mt-2 mx-1 mb-2"><br class="mb-3"></span>';
 
     ?>
     <br>
     <div class="d-flex justify-content-start mb-3">
         <input type="submit" value="Supprimer" class="btn btn-light text-danger">
-        <a class="mx-2" href="?p=a_detail&id=<?php echo $myDisc->disc_id ?>"><input type="button" value="Annuler" class="btn btn-light"></a>
+        <a class="mx-2" href="?p=d_detail&d_id=<?php echo $myDisc->disc_id ?>"><input type="button" value="Annuler" class="btn btn-light"></a>
     </div>
 </form>
