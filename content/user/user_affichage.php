@@ -21,6 +21,7 @@
                 <th>Adresse mail</th>
                 <th>Niveau d'authentification</th>
                 <th>Modifier l'utilisateur</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -35,8 +36,9 @@
                 }
                 else{
                     echo '<td><a class="mx-1" href="?p=u_mod&u_id=<'.$user->id_user.'"><input type ="button" value="Modifier"></input></a><a href="?p=u_cdel&u_id='.$user->id_user.'"><input type ="button" value="Supprimer"></input></a></td>';
-                echo '</tr>';
                 }
+                echo '<td><a class="mx-1" href="../script_reset_pw.php?mail='.$user->usr_mail.'"><input type ="button" value="Reset MdP"></input></a></td>';
+                echo '</tr>';
             }
             ?>
         </tbody>

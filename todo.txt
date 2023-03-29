@@ -63,6 +63,14 @@ Progress bar pour mesurer la sécurité du mot de passe
 Multiple progress bar pour gérer les differentes conditions et couleur adapté selon critères mot de passe
 Ajout de hover sur les differents tableaux artist, disc et user
 
+0.17 - Creation page reset mdp
 
-* Réinitialisation mot de passe déclanchable par l'administrateur
-* Envoi de mail pour réinitialisation de mot de passe
+Page reset mot de passe et script pour envoi de mail
+
+0.18 - Config MailHog et Bouton reset admin
+
+Installation MailHog
+Réinitialisation mot de passe déclenchable par l'administrateur
+Envoi de mail pour réinitialisation de mot de passe
+
+* Faire une redirection correcte si le script est déclenché depuis la page admin
