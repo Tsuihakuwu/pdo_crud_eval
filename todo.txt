@@ -73,4 +73,6 @@ Installation MailHog
 Réinitialisation mot de passe déclenchable par l'administrateur
 Envoi de mail pour réinitialisation de mot de passe
 
-* Faire une redirection correcte si le script est déclenché depuis la page admin
+1.0 - Version finale Session/Mail
+
+Redirection correcte si le script est déclenché depuis la page admin

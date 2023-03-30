@@ -76,13 +76,23 @@ echo 'Email bien envoy&eacute; &agrave; ' . $destinataires;
 }
 }
 
-$_SESSION['er_rs_pw'] = 1;
-header("Location:/index.php?p=reset");
+if(isset($_SESSION['login'])&&isset($_SESSION['auth_lvl'])){
+    header("Location:/index.php?p=user");
+}
+else {
+    $_SESSION['er_rs_pw'] = 1;
+    header("Location:/index.php?p=reset");
+}
 
 }
 else{
-    $_SESSION['er_rs_pw'] = 2;
-    header("Location:/index.php?p=reset");
+    if(isset($_SESSION['login'])&&isset($_SESSION['auth_lvl'])){
+        header("Location:/index.php?p=user");
+    }
+    else{
+        $_SESSION['er_rs_pw'] = 2;
+        header("Location:/index.php?p=reset");
+    }
 }
 
 ?>
